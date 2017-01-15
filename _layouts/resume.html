@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+
+    <div class="wrapper">
+
+      <header class="page-header">
+
+        <!-- You can turn off the avatar in _config.yml by setting to false -->
+        {% if site.resume_avatar == 'true' %}
+        <img src="images/avatar.jpg" alt="my photo" class="avatar">
+        {% endif %}
+
+        <!-- Your name is defined in the _config.yml file -->
+        <h1 class="header-name">{{ site.resume_name }}</h1>
+        {% if site.resume_looking_for_work == 'yes' %}
+        <a href="mailto:{{ site.resume_contact_email }}" class="contact-button">ohraymaster@163.com</a>
+
+        <div class="title-bar">
+
+          <!-- Your title is also defined in the _config.yml file -->
+          <h2 class="header-title">{{ site.resume_title }}</h2>
+
+          <!-- This is the markup for the icon links; moved out to an include because it's very verbose, and you shouldn't ever need to edit the markup (unless you want to re-order the icons); if you want to customize which links appear, define them in the _config.yml file -->
+          {% include icon-links.html %}
+        </div>
+
+        <div class="executive-summary">
+          <p>I am a bouncy and talkative programmer. </p>
+          <p>I have been working on some global projects since 2010.</p>
+         <!--  <p>I am bouncy, cocky, sometimes talkative and sometimes quiet</p> -->
+        </div>
+
+        <ul class="tag-box inline">
+          <!--<li><div>Email: ohraymaster@163.com</div></li>-->
+          <li><a>Tel:+86 18842894260</a></li>
+          <!--<li><div>Addr: Dalian China </div></li>-->
+        </ul>
+        {% elsif site.resume_looking_for_work == 'no' %}
+        <a class="contact-button not-looking">I'm not looking for work right now.</a>
+        {% else %}
+        {% endif %}
+
+      </header>
+
+      {% if site.resume_section_experience %}
+      <!-- begin Experience -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Experience</h2>
+        </header>
+
+        <!-- Duplicate these resume-item elements and edit accordingly for each job you want to add here -->
+        <div class="resume-item">
+          <h3 class="resume-item-title">IBM CIO BT/IT (Chief Information Office Business Transformation and Information Technology)</h3>
+          <h4 class="resume-item-details">Development Engineer &bull; China &bull; Oct, 2014 - Present</h4>
+          <p class="resume-item-copy">Developing & Deploying CRM system</p>
+          <ul class="resume-item-list">
+            <li>Building PHP back-end server logic</li>
+            <li>creating SOAP/RESTful interfaces for mobile</li>
+            <li>Implementing Data Migration</li>
+            <li>Designing front-end web application</li>
+          </ul>
+          <p class="resume-item-copy">Continuous Integration Auto Testing System</p>
+          <ul class="resume-item-list">
+            <li>In order to tune our Agile process to release iteratively, I decided to spend some time looking at how we could introduce continuous integration into our Projects. Thus I created the system by using Java, Python, Shell, Git and Docker based on 20 Cloud Servers. 
+            </li>
+          </ul>
+          <!--<p class="resume-item-copy">If you're going to copy paste markup, or edit it, just be sure to keep the appropriate classnames on your new elements for styling purposes.</p>-->
+
+        </div><!-- end of resume-item -->
+
+        <!-- another resume item -->
+        <div class="resume-item">
+          <h3 class="resume-item-title">UNSW IT Center (The University of New South Wales)</h3>
+          <h4 class="resume-item-details">Software Engineer - part-time &bull; Dec, 2012 &mdash; Jun, 2013</h4>
+          <p class="resume-item-copy">Science,Research,Universities</p>
+          <ul class="resume-item-list">
+            <li>Developing campus-wide programs.</li>
+            <li>Support multiple systems users and performing general troubleshooting duties.</li>
+            <li>Implementing Data Migration</li>
+          </ul>
+
+        </div><!-- end of resume-item -->
+
+        <!-- by now you're getting the picture... -->
+        <div class="resume-item">
+          <h3 class="resume-item-title">Harbin Human Resources Service Center</h3>
+          <h4 class="resume-item-details">IT support &bull; Dec, 2009 &mdash; Dec, 2010</h4>
+          <p class="resume-item-copy">Government, public service, Non-Profit</p>
+          <ul class="resume-item-list">
+            <li>Technical Support for official website</li>
+          </ul>
+        </div><!-- end of resume-item -->
+
+      </section>
+      <!-- end Experience -->
+      {% endif %}
+
+      {% if site.resume_section_education %}
+      <!-- begin Education -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Education</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">University of New South Wales, Faculty of Engineering(QS Ranking: 46 &bull; Sydney, Australia)</h3>
+          <h4 class="resume-item-details">Master of Information Technology &bull; Sep, 2011 &mdash; Sep, 2013</h4>
+          <p class="resume-item-copy">Professional Recognition: Australian Computer Society</p>
+          <ul class="resume-item-list">
+            <li>1. E-commerce (E-Enterprise Project/Service-Oriented Architectures)</li>
+            <li>2. Database Systems Implementation</li>
+          </ul>
+        </div>
+
+          <div class="resume-item">
+          <h3 class="resume-item-title">Harbin Normal University, China</h3>
+          <h4 class="resume-item-details">Bachelor of Computer Science &bull; Class Monitor &bull; Sep, 2005 &mdash; Sep, 2009</h4>
+          <ul class="resume-item-list">
+            <li>1. Enterprise Web and Software Development</li>
+            <li>2. Networking</li>
+            <li>3. Teaching skills (Computer Teacher Certificate)</li>
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Education -->
+      {% endif %}
+
+      {% if site.resume_section_projects %}
+      <!-- begin Projects -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Projects</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">SalesConnect</h3>
+          <h4 class="resume-item-details">Senior Software Engineer &bull; 2014 &mdash; Present</h4>
+          <p class="resume-item-copy">SalesConnect simplifies the way sellers and sales managers work. The application integrated manager roadmapping, seller roadmapping, opportunity management, social, mobile, and analytics capabilities into one modern work environment. Sales teams are now seeing tangible time savings.</p>
+          <ul class="resume-item-list">
+            <!-- <li>1. Developing & deploy cloud-based Continuous Integration System(skills: java, shell, python, docker, jenkins, ruby)
+            </li>
+            <li>2. Developing the SugarCRM system(skills: php,html5, css3, javascript, backbone,bootstrap,db2)</li>
+            <li>3. Providing upgrade safe solutions for the CRM project</li> -->
+            <!--<li>Share seller roadmap data in real-time for manager roll-ups.</li>-->
+            <!--<li>Access one, global source for seller and manager roadmaps and key deals information.</li>-->
+            <!--<li>See integrated roadmaps and comments, Steps to Closure across brands and reduce the need for ad hoc requests.</li>-->
+            <!--<li>Take advantage of robust reporting capabilities.</li>-->
+            <!--<li>Work anytime, anywhere with our mobile capabilities.</li>-->
+            <!--<li>Seamlessly share files and move among Notes, SalesConnect and Connections.</li>-->
+            <!--<li>Make and receive immediate updates on recent client and opportunity events.</li>-->
+            <!--<li>Re-use opportunity and client data for roadmapping and cadence.</li>-->
+            <li> I joined IBM as a senior Software and Web Engineer at the beginning of the project SalesConnect.</li>
+            <li> SalesConnect contains over 30 upstream and downstream systems</li>
+            <li> We adopts Scaled Agile Framework, TDD & Continuous Integration to manage the project. (increase in productivity and quality, faster, measurable)</li>
+            <li> I manage my team (5 developers, 1 tester, 1 scrum master, 1 BA)</li>
+            <li> I am responsible for building back-end server logic, designing/implmenting UI/UX, creating SOAP/RESTful interfaces, implementing Data Migration and Creating/Maintaining CI testing environment, training new hires.</li>
+            <li> I am using the Framework SugarCRM, SOAP/RESTful Test Automation Frameworks, PHP, JAVA, HTML5, JS, DB2, Backbone.js, handbars, jQuery, underscore.js, elasticsearch, redis, shell, python, jenkins, urban code deploy and etc.</li>
+            <li> 70% coding and 30% communication</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Continuous Integration Testing System</h3>
+          <h4 class="resume-item-details">Senior Software Engineer &bull; 2014 &mdash; Present</h4>
+          <p class="resume-item-copy">The daily life of developers and testers are filled with monotonous and repetitive tasks, so we should build a system to handle boring chores. Many our projects are now automatically tested and deployed. It allows people to focus more on writing/testing code.</p>
+          <ul class="resume-item-list">
+            <li>I am responsible for building the CI system</li>
+            <li>Development ENV: AIX, Centos</li>
+            <li>Components: Jenkins, Github, ftp server, apache, elasticsearch server</li>
+            <li>Deploy Scripts: python, shell</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Querying and Maintaining a Compact XML Storage</h3>
+          <h4 class="resume-item-details">Software Engineer &bull; 2012 &mdash; 2013</h4>
+          <p class="resume-item-copy">Our work is motivated by the mobile software development at National ICT Australia and Green Pea Software, in which managing large amount of XML data on mobile devices is mandatory. We thus turn to the problem of finding a compact storage scheme for XML. The flexibility of XML makes finding a scheme which satisfies all these requirements at the same time extremely challenging. </p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Naïve BayesText Categorization</h3>
+          <h4 class="resume-item-details">Software Engineer &bull; Apr, 2012 &mdash; Jul, 2012</h4>
+          <p class="resume-item-copy">Keywords: Java, machine learning, algorithm, naïve Bayes’ theorem. I use 18846 News documents to build the application. The 60% of them are learned and the other 40% are tested. The common word list is built and used in the project. The project used the Naïve Bayes classification VNB to predicate a document is more like a certain category</p>
+        </div>
+
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">SCEDoodleservice</h3>
+          <h4 class="resume-item-details">Software Engineer &bull; Mar, 2011 &mdash; Jun, 2011</h4>
+          <p class="resume-item-copy">Web-based poll service. CSEDoodle offers some popular functions and provides a RESTful application programming interface (API). Users easily create new polls that correspond to the content of the Web page can simply pre-fill the CSE-Doodle wizard through an HTML link or an HTML form.  </p>
+        </div>
+
+      </section>
+      <!-- end Projects -->
+      {% endif %}
+
+      {% if site.resume_section_skills %}
+      <!-- begin Skills -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Skills</h2>
+        </header>
+
+        <div class="resume-item">
+          <h4 class="resume-item-details">Language</h4>
+          <p class="resume-item-copy">Mandarin, English (IELTS L8.5 R8 W6.5 S7)</p>
+        </div>
+
+        <div class="resume-item">
+          <h4 class="resume-item-details">Professional Skills</h4>
+          <ul class="resume-item-list">
+            <li>OS: Linux(CentOS, RedHat, Ubuntu), OS X, Windows</li>
+            <li>Language: C, C++, Java(SCJP Band A 2008), Python, PHP</li>
+            <li>Framework: Spring,SSH, SugarCRM, laravel, etc.</li>
+            <li>DB: Oracle, Mysql, DB2</li>
+            <li>Tool: Docker, git, Jenkins, Elasticsearch, backbone.js. jQuery.js, Handlebars.js, Boost, Boostrap, Shell</li>
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Skills -->
+      {% endif %}
+
+      {% if site.resume_section_recognition %}
+      <!-- begin Recognition -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Recognition</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Springfield Nuclear Power Plant</h3>
+          <h4 class="resume-item-details">Outstanding Achievement &bull; 2010</h4>
+          <p class="resume-item-copy">Awarded for stopping a nuclear meltdown, even though I also started it.</p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Duff Beer Customer of the year</h3>
+          <h4 class="resume-item-details">1997 &mdash; 2001, 2003, 2008 &mdash; 2012</h4>
+          <p class="resume-item-copy">Honored by <a href="https://en.wikipedia.org/wiki/Duff_Beer">Duff Beer</a> for being an outstanding customer several years straight. Qualifications included most beer consumed at a bar, most beer purchased, and most beer ralphed.</p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Moe's Patron of the Month</h3>
+          <h4 class="resume-item-details">12/2001, 8/2004</h4>
+          <p class="resume-item-copy">Specifically this prestigious awarded twice for stopping a robber with my belly.</p>
+        </div>
+
+      </section>
+      <!-- end Recognition -->
+      {% endif %}
+
+      {% if site.resume_section_associations %}
+      <!-- begin Associations -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Associations</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="http://beerfortheworld.com">Beer for the World</a></h3>
+          <h4 class="resume-item-details">Volunteer &bull; 2008 &mdash; Present</h4>
+          <p class="resume-item-copy">Organized fund drives and participated in fundraising events for the benefit of families in third world countries without proper access to malt beverages.</p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Springfield Nuclear Workers Labor Union</h3>
+          <h4 class="resume-item-details">Member in Good Standin &bull; 1994 &mdash; Present</h4>
+          <p class="resume-item-copy">Founding member of the local nuclear workers labor union.</p>
+        </div>
+
+      </section>
+      <!-- end Associations -->
+      {% endif %}
+
+      {% if site.resume_section_links %}
+      <!-- begin Links -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Additional Links</h2>
+        </header>
+
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            <li><a href="#">Springfield Poker Club</a></li>
+            <li><a href="#">Springfield Donut Eater's User Group</a></li>
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Links -->
+      {% endif %}
+
+      <footer class="page-footer">
+        <p class="footer-line">Made by <a href="http://raysxysun.github.io">@OHRAYMASTER</a>. Fork me on <a href="https://github.com/RaySxySun">GitHub</a></p>
+        <p class="footer-line"> (￣ˇ￣)↗ This is my live resume </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
